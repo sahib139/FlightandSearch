@@ -4,7 +4,7 @@
   "description": "MicroService for seaching and creating flights",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon index.js"
+    "start": "npx nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
