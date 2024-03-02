@@ -12,13 +12,15 @@
 ```
 {
   "development": {
-    "username": "xolo",
-    "password": "Xolo@xolo1",
+    "username": "<database_username>",
+    "password": "<database_password>",
     "database": "Flights_Search_DB_DEV",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "<database_name (example-> mysql) >"
   }
 }
 ```
-- Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx squelize db:create`
+- Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`
+
+- After creating database by executing above command , now create all the tables by executing `npx sequelize db:migrate`
 
