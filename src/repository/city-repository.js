@@ -12,7 +12,7 @@ class CityRepository{
         }
     }
 
-    async deleteCity({cityId}){
+    async deleteCity(cityId){
         try{
             await City.destroy({
                 where:{
@@ -33,7 +33,7 @@ class CityRepository{
                     id:cityId,
                 }
             });
-            return city;
+            return this.getCity(cityId);
         } catch (error) {
             console.log("Something went wrong at repository layer");
             throw {error};
