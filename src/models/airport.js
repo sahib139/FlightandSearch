@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-const { FOREIGNKEYS } = require('sequelize/types/query-types');
+
 module.exports = (sequelize, DataTypes) => {
   class Airport extends Model {
     /**
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     cityId: {
       type:DataTypes.INTEGER,
-      allowNull:false,
+      
     }
   }, {
     sequelize,
