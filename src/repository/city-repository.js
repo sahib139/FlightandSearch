@@ -1,3 +1,4 @@
+const { json } = require("body-parser");
 const {City} = require("../models/index");
 const {Op} =require("sequelize");
 
@@ -8,6 +9,16 @@ class CityRepository{
             const city=await City.create({name});
             return city;
         }catch(error){
+            console.log("Something went wrong at repository layer");
+            throw {error};
+        }
+    }
+
+    async createBulkCities(cities){
+        try {
+            await City.bulkCreate(cities);
+            return true;
+        } catch (error) {
             console.log("Something went wrong at repository layer");
             throw {error};
         }

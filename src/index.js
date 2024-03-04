@@ -2,7 +2,6 @@ const express = require("express");
 const bodyparser = require("body-parser");
 
 const db=require("./models/index");
-const {Airport,City}=require("./models/index.js");
 
 const ApiRoutes= require("./routes/index.js");
 

@@ -15,6 +15,16 @@ class Cityclass{
         }
     }
 
+    async createBulkCities(cities){
+        try {
+            const response=await this.CityRepository.createBulkCities(cities);
+            return response;
+        } catch (error) {
+            console.log("Something went wrong at Service Layer");
+            throw {error};
+        }
+    }
+
     async deleteCity(cityId){
         try {
             const response=await this.CityRepository.deleteCity(cityId);

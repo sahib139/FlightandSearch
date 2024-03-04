@@ -23,6 +23,31 @@ const create=async (req,res)=>{
     }
 }
 
+const createBulk=async (req,res)=>{
+    try {
+
+        let data=req.body.name.map((name)=>({name}));
+        data=JSON.stringify(data);
+        data=JSON.parse(data);
+        
+        const response=await cityService.createBulkCities(data);
+        return res.status(201).json({
+            data :null,
+            success:true,
+            message:"successfully created a cities",
+            err:{}
+        });
+    } catch (error) {
+        console.log("Something went wrong at controller layer due to"+error);
+        return res.status(500).json({
+            data:{},
+            success:false,
+            message:"Not able to create the cities",
+            err: error
+        });
+    }
+}
+
 // delete (method)-> /city/:id
 const destroy=async (req,res)=>{
     try {
@@ -107,6 +132,7 @@ const getAll=async (req,res)=>{
 
 module.exports={
     create,
+    createBulk,
     get,
     update,
     destroy,
