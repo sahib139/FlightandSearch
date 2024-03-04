@@ -8,7 +8,7 @@ const create=async (req,res)=>{
         const city=await cityService.createCity(req.body);
         return res.status(201).json({
             data :city,
-            sucess:true,
+            success:true,
             message:"successfully created a city",
             err:{}
         });
@@ -16,7 +16,7 @@ const create=async (req,res)=>{
         console.log("Something went wrong at controller layer due to"+error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             message:"Not able to create the city",
             err: error
         });
@@ -29,7 +29,7 @@ const destroy=async (req,res)=>{
         const response=await cityService.deleteCity(req.params.id);
         return res.status(200).json({
             data :response,
-            sucess:true,
+            success:true,
             message:"successfully deleted a city",
             err:{}
         });
@@ -37,7 +37,7 @@ const destroy=async (req,res)=>{
         console.log("Something went wrong at controller layer due to"+error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             message:"Not able to delete the city",
             err: error
         });
@@ -50,7 +50,7 @@ const update=async (req,res)=>{
         const city=await cityService.updateCity(req.params.id,req.body);
         return res.status(200).json({
             data :city,
-            sucess:true,
+            success:true,
             message:"successfully deleted a city",
             err:{}
         });
@@ -58,7 +58,7 @@ const update=async (req,res)=>{
         console.log("Something went wrong at controller layer due to"+error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             message:"Not able to update the city",
             err: error
         });
@@ -71,7 +71,7 @@ const get=async (req,res)=>{
         const city=await cityService.getCity(req.params.id);
         return res.status(200).json({
             data :city,
-            sucess:true,
+            success:true,
             message:"successfully fetched a city",
             err:{}
         });
@@ -79,7 +79,7 @@ const get=async (req,res)=>{
         console.log("Something went wrong at controller layer due to"+error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             message:"unable to fetch the city",
             err: error
         });
@@ -91,7 +91,7 @@ const getAll=async (req,res)=>{
         const cities=await cityService.getAll(req.query);
         return res.status(200).json({
             data:cities,
-            sucess:true,
+            success:true,
             message:"successfully fetched the cities",
             err:{}
         });

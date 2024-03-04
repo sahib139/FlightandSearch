@@ -2,7 +2,7 @@ const {AirportService}=require("../services/index");
 
 const airportService=new AirportService();
 
-const createAirport=async (req,res)=>{
+const create=async (req,res)=>{
     try {
         const airport=await airportService.createAirport(req.body);
         return res.status(2001).json({
@@ -21,7 +21,7 @@ const createAirport=async (req,res)=>{
     }
 };
 
-const destroyAirprot=async (req,res)=>{
+const destroy=async (req,res)=>{
     try {
         const response=await airportService.createAirport(req.params.airportId);
         return res.status(2001).json({
@@ -40,7 +40,7 @@ const destroyAirprot=async (req,res)=>{
     }
 };
 
-const updateAirport=async (req,res)=>{
+const update=async (req,res)=>{
     try {
         const airport=await airportService.createAirport(req.body,req.params.airportId);
         return res.status(2001).json({
@@ -59,7 +59,7 @@ const updateAirport=async (req,res)=>{
     }
 };
 
-const getAirport=async (req,res)=>{
+const get=async (req,res)=>{
     try {
         const airport=await airportService.createAirport(req.params.airportId);
         return res.status(2001).json({
@@ -96,3 +96,11 @@ const getAll=async (req,res)=>{
         });
     }
 };
+
+module.exports={
+    create,
+    destroy,
+    update,
+    get,
+    getAll
+}
