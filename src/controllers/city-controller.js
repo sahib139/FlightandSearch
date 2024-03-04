@@ -25,11 +25,10 @@ const create=async (req,res)=>{
 
 const createBulk=async (req,res)=>{
     try {
-
         let data=req.body.name.map((name)=>({name}));
         data=JSON.stringify(data);
         data=JSON.parse(data);
-        
+
         const response=await cityService.createBulkCities(data);
         return res.status(201).json({
             data :null,
@@ -130,6 +129,26 @@ const getAll=async (req,res)=>{
     }
 }
 
+const getCityAirports=async (req,res)=>{
+    try{
+        console.log(req.params.id);
+        const airports=await cityService.getCityAirport(req.params.id);
+        return res.status(200).json({
+            data:airports,
+            success:true,
+            message:"successfully fetched the airports",
+            err:{}
+        });
+    }catch(error){
+        return res.status(500).json({
+            data:{},
+            success:false,
+            message:"unable to fetch the airports",
+            err: error
+        });
+    }
+}
+
 module.exports={
     create,
     createBulk,
@@ -137,4 +156,5 @@ module.exports={
     update,
     destroy,
     getAll,
+    getCityAirports,
 }
