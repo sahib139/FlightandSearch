@@ -43,6 +43,7 @@ class AirportRepository{
 
     async getAirport(airportId){
         try {
+            // console.log()
             const airport=await Airport.findByPk(airportId);
             return airport;
         } catch (error) {
@@ -63,6 +64,7 @@ class AirportRepository{
             });
             return airports;
         } catch (error) {
+            console.log("yo");
             console.log("something went wrong at repository layer");
             throw {error};
         }

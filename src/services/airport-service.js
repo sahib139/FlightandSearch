@@ -38,7 +38,7 @@ class Airportclass{
 
     async getAirport(airportId){
         try {
-            const airport=await this.AirportRepository.updateAirport(airportId);
+            const airport=await this.AirportRepository.getAirport(airportId);
             return airport;
         } catch (error) {
             console.log("something went wrong at service layer");

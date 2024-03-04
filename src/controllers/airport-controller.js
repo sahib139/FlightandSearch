@@ -5,7 +5,7 @@ const airportService=new AirportService();
 const create=async (req,res)=>{
     try {
         const airport=await airportService.createAirport(req.body);
-        return res.status(2001).json({
+        return res.status(201).json({
             data:airport,
             success:true,
             message:"successfully created the airport",
@@ -23,8 +23,8 @@ const create=async (req,res)=>{
 
 const destroy=async (req,res)=>{
     try {
-        const response=await airportService.createAirport(req.params.airportId);
-        return res.status(2001).json({
+        const response=await airportService.deleteAirport(req.params.id);
+        return res.status(200).json({
             data:response,
             success:true,
             message:"successfully deleted the airport",
@@ -42,8 +42,9 @@ const destroy=async (req,res)=>{
 
 const update=async (req,res)=>{
     try {
-        const airport=await airportService.createAirport(req.body,req.params.airportId);
-        return res.status(2001).json({
+        // console.log(req.query,req.params.id)
+        const airport=await airportService.updateAirport(req.body,req.params.id);
+        return res.status(200).json({
             data:airport,
             success:true,
             message:"successfully updated the airport",
@@ -61,8 +62,8 @@ const update=async (req,res)=>{
 
 const get=async (req,res)=>{
     try {
-        const airport=await airportService.createAirport(req.params.airportId);
-        return res.status(2001).json({
+        const airport=await airportService.getAirport(req.params.id);
+        return res.status(200).json({
             data:airport,
             success:true,
             message:"successfully fetched the airport",
@@ -80,8 +81,8 @@ const get=async (req,res)=>{
 
 const getAll=async (req,res)=>{
     try {
-        const airport=await airportService.createAirport(req.query);
-        return res.status(2001).json({
+        const airport=await airportService.getAll(req.query);
+        return res.status(200).json({
             data:airport,
             success:true,
             message:"successfully fetched the airports",
