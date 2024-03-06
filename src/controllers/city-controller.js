@@ -131,7 +131,6 @@ const getAll=async (req,res)=>{
 
 const getCityAirports=async (req,res)=>{
     try{
-        console.log(req.params.id);
         const airports=await cityService.getCityAirport(req.params.id);
         return res.status(200).json({
             data:airports,

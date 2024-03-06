@@ -83,7 +83,6 @@ class CityRepository{
         try {
             const city= await City.findByPk(cityId);
             const airports=city.getAirports();
-            // console.log(airports);
             return airports;
         } catch (error) {
             console.log("Something went wrong at repository layer");
