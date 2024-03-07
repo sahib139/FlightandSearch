@@ -1,5 +1,6 @@
 const {FlightService}=require("../services/index");
 
+
 const flightService=new FlightService();
 
 const create=async (req,res)=>{
