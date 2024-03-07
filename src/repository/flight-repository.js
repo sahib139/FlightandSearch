@@ -1,5 +1,7 @@
 const {Flight}=require("../models/index");
 const {Op}= require("sequelize");
+
+
 class FlightRepository{
 
     #createFilter(data){
@@ -55,4 +57,5 @@ class FlightRepository{
     }
 
 }
+
 module.exports=FlightRepository;
