@@ -27,7 +27,7 @@
 - After creating database by executing above command , now create all the tables by executing `npx sequelize db:migrate`
 
 ```
-## DB Design
+- DB Design
   - Airplane Table
   - Flight
   - Airport
