@@ -22,7 +22,7 @@
 ```
 - Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`
 
-- After creating database by executing above command , now create all the tables by executing `npx sequelize db:migrate`
+- After creating database by executing above command , now create all the tables by executing `npx sequelize db:migrate:all`
 
 ```
 - DB Design
