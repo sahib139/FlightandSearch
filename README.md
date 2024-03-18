@@ -7,8 +7,6 @@
     - `PORT = 3000`
     - `DB_SYNC = false` -> for syncing the database initially make it true , after executing once change it to 
       false because we don't want to do syncing every time we start the server.
-- Inside the main project folder execute `sequelize init`
-    (For my preference i shifted the the files created by above command into src folder)
 - Inside the `src/config` folder create a new file `config.json` and then add the following piece of json
 
 ```
@@ -29,11 +27,12 @@
 ```
 - DB Design
   - Airplane Table
-  - Flight
-  - Airport
-  - City 
+  - Flight Table
+  - Airport Table
+  - City Table
 
   - A flight belongs to an airplane but one airplane can be used in multiple flights
   - A city has many airports but one airport belongs to a city
   - One airport can have many flights, but a flight belongs to one airport
 ```
+- Finally, Run the `src/index.js` file to run the Server.
