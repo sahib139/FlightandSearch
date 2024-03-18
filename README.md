@@ -5,7 +5,9 @@
 - Execute `npm install` on the same path as of your root directory of the downloaded project.
 - Create a `.env` file in the root directory and add the following environment variable
     - `PORT = 3000`
-- +Inside the main project folder execute `sequelize init`
+    - `DB_SYNC = false` -> for syncing the database initially make it true , after executing once change it to 
+      false because we don't want to do syncing every time we start the server.
+- Inside the main project folder execute `sequelize init`
     (For my preference i shifted the the files created by above command into src folder)
 - Inside the `src/config` folder create a new file `config.json` and then add the following piece of json
 
