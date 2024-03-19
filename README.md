@@ -35,4 +35,4 @@
   - A city has many airports but one airport belongs to a city
   - One airport can have many flights, but a flight belongs to one airport
 ```
-- Finally, Run the `src/index.js` file to run the Server.
+- Finally, Run the `npm start` in the root directory to run the Server.
